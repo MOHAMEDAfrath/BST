@@ -23,13 +23,7 @@ namespace BST
             Console.WriteLine("Display using inorder traversal:");
             bST.Display();
             bST.SizeOfTree();
-            bool result = bST.Search(63, bST);
-            if (!result)
-            {
-                Console.WriteLine("Not Found");
-
-            }
-            Console.WriteLine(" ");
+           
         }
     }
 }

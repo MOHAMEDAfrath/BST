@@ -55,39 +55,19 @@ namespace BST
             Console.WriteLine(" ");
             Console.WriteLine("The Size of BST is {0}",(count+1));
         }
-        public bool Search(T key,BSTOperations<T> node)
-        {
-            if(node == null)
-            {
-                return false;
-            }if(node.data.Equals(key))
-            {
-                Console.WriteLine("Found! "+node.data);
-                result = true;
-            }
-            if (key.CompareTo(node.data) < 0)
-            {
-                Search(key,node.left);
-            }
-            if(key.CompareTo(node.data) > 0)
-            {
-                Search(key, node.right);
-            }
-           
-            return result;
-        }
+     
         public void Display()
         {
             
             if (this.left != null)
             {
-                //this.leftcount++;
+               
                 this.left.Display();
             }
             Console.Write(this.data.ToString()+" ");
             if (this.right != null)
             {
-               // this.rightcount++;
+              
                 this.right.Display();
             }
           
