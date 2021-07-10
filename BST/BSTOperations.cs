@@ -10,22 +10,27 @@ namespace BST
     {
         public T data;
         public BSTOperations<T> left = null, right = null;
+        
         public BSTOperations (T data)
         {
             this.data = data;
             this.left = null;
             this.right = null;
         }
+        int count=0;
         public void Insert(T data)
         {
+
             T current = this.data;
             if (current.CompareTo(data) > 0)
             {
                 if(this.left == null)
                 {
+                    count++;
                     this.left = new BSTOperations<T>(data);
                 }
                 else {
+                    count++;
                     this.left.Insert(data);
                 }
             }
@@ -33,28 +38,37 @@ namespace BST
             {
                 if (this.right == null)
                 {
+                    count++;
                     this.right = new BSTOperations<T>(data);
                 }
                 else
                 {
+                    count++;
                     this.right.Insert(data);
                 }
 
             }
+        }
+        public void SizeOfTree()
+        {
+            Console.WriteLine(" ");
+            Console.WriteLine("The Size of BST is {0}",(count+1));
         }
         public void Display()
         {
             
             if (this.left != null)
             {
+                //this.leftcount++;
                 this.left.Display();
             }
             Console.Write(this.data.ToString()+" ");
             if (this.right != null)
             {
+               // this.rightcount++;
                 this.right.Display();
             }
-            
+          
         }
         
             
